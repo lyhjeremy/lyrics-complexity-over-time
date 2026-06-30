@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Are Song Lyrics Getting Simpler?</title>
+<meta name="description" content="Fifty years of Billboard Hot 100 hits, analyzed. The surprise: lyrics aren't built from simpler words — but hit songs have doubled in length and lean far harder on repeated hooks." />
+<style>
+  :root{--ink:#1a1a2e;--paper:#FBF8F1;--rule:#E5DCC7;--soft:#6B7280;--accent:#D4A537;--teal:#15868C;--coral:#E0567A;--plum:#5B4B8A}
+  *{box-sizing:border-box} html,body{margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.7;font-size:18px}
+  .hero{width:100%;background:#14142b;overflow:hidden}.hero svg{width:100%;height:250px;display:block}
+  .container{max-width:760px;margin:0 auto;padding:40px 24px 80px}
+  .kicker{text-transform:uppercase;letter-spacing:.16em;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;color:var(--plum);font-weight:700;text-align:center;margin-bottom:14px}
+  h1{font-size:40px;line-height:1.18;text-align:center;margin:0 0 16px}
+  .lede{font-size:21px;color:#33334d;text-align:center;margin:0 auto 6px;max-width:640px}
+  .byline{color:var(--soft);font-style:italic;text-align:center;margin:20px 0 36px}
+  h2{font-size:27px;margin:54px 0 14px;border-bottom:1px solid var(--rule);padding-bottom:8px}
+  p{margin:0 0 18px} a{color:var(--teal)}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:34px 0}
+  .stat{background:#fff;border:1px solid var(--rule);border-radius:10px;padding:22px 14px;text-align:center}
+  .stat .n{font-family:'Helvetica Neue',Arial,sans-serif;font-size:30px;font-weight:800;color:var(--plum);line-height:1}
+  .stat .l{font-size:13px;color:var(--soft);margin-top:8px;font-family:'Helvetica Neue',Arial,sans-serif}
+  figure{margin:32px 0;text-align:center}
+  figure img{max-width:100%;height:auto;border:1px solid var(--rule);border-radius:6px;background:#fff}
+  figcaption{font-size:14px;color:var(--soft);font-style:italic;margin-top:10px}
+  .findings{background:#fff;border:1px solid var(--rule);border-radius:10px;padding:22px 30px;margin:30px 0}
+  .findings ul{margin:0;padding-left:20px} .findings li{margin-bottom:11px}
+  .note{background:#fff;border:1px solid var(--rule);border-left:4px solid var(--teal);border-radius:8px;padding:14px 20px;font-size:14.5px;color:#444;font-family:'Helvetica Neue',Arial,sans-serif;margin:24px 0}
+  .footer{text-align:center;color:var(--soft);font-size:14px;margin-top:54px;font-family:'Helvetica Neue',Arial,sans-serif}
+  @media(max-width:560px){h1{font-size:30px}.stats{grid-template-columns:1fr}.hero svg{height:190px}}
+</style>
+</head>
+<body>
+<div class="hero">
+  <svg viewBox="0 0 760 250" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Music notes and the repeated words la la la growing over time">
+    <defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1c1c3d"/><stop offset="1" stop-color="#101025"/></linearGradient></defs>
+    <rect width="760" height="250" fill="url(#bg)"/>
+    <g font-family="Helvetica Neue,Arial" font-weight="800" fill="#5B4B8A">
+      <text x="60" y="120" font-size="22">la</text><text x="120" y="150" font-size="26" fill="#15868C">la</text>
+      <text x="185" y="110" font-size="30" fill="#D4A537">la</text><text x="250" y="160" font-size="34">la</text>
+      <text x="330" y="120" font-size="40" fill="#E0567A">la</text><text x="420" y="165" font-size="46" fill="#15868C">la</text>
+      <text x="520" y="120" font-size="54" fill="#D4A537">la</text><text x="630" y="160" font-size="62" fill="#E0567A">la</text>
+    </g>
+    <g fill="none" stroke="#3a3a63" stroke-width="3"><path d="M40 200 H720"/></g>
+  </svg>
+</div>
+<div class="container">
+  <p class="kicker">Data story · 4,816 Billboard hits · 1965–2015</p>
+  <h1>Are Song Lyrics Getting Simpler?</h1>
+  <p class="lede">"Modern pop is just the same word over and over." It's a popular complaint. I tested it against fifty years of chart-topping hits — and the real answer is more interesting than the cliché.</p>
+  <p class="byline">By Jeremy Lee</p>
+
+  <div class="stats">
+    <div class="stat"><div class="n">+107%</div><div class="l">hit songs have more than doubled in word count</div></div>
+    <div class="stat"><div class="n">more</div><div class="l">whole-song repetition has clearly risen</div></div>
+    <div class="stat"><div class="n">steady</div><div class="l">vocabulary richness and word length barely changed</div></div>
+  </div>
+
+  <h2>The claim, and the test</h2>
+  <p>It's a common gripe that lyrics have gotten dumber and more repetitive. To check, I analyzed the lyrics of <strong>4,816 year-end Billboard Hot 100 hits from 1965 to 2015</strong> and tracked four simple measures over time: how long songs are, how varied their vocabulary is, how repetitive they are, and how long their words are.</p>
+
+  <h2>Hits have doubled in length</h2>
+  <p>The single biggest change isn't subtle. The average charting song went from about <strong>200 words to over 410</strong> — more than double — driven largely by the rise of rap and hip-hop and longer modern song structures.</p>
+  <figure><img src="figures/01_length.png" alt="Words per song rising steeply from 1965 to 2015"><figcaption>Average words per hit song, by year. A steady, dramatic climb (r = 0.92).</figcaption></figure>
+
+  <h2>More repetition — but mind the catch</h2>
+  <p>Whole songs really have gotten more repetitive: compress the lyrics and modern hits squeeze down much smaller, a classic signature of repeated hooks and choruses. The honest caveat: longer songs repeat their hooks more by construction, so part of this is simply that songs got longer.</p>
+  <figure><img src="figures/03_repetition.png" alt="Compression ratio falling over time, meaning more repetition"><figcaption>Lower compression ratio = more repetitive. Modern hits repeat more (r = −0.89) — partly a side-effect of their length.</figcaption></figure>
+
+  <h2>But the words themselves aren't simpler</h2>
+  <p>Here's the twist that breaks the cliché. When you control for length and look at vocabulary in a fixed 100-word window, richness has <em>held steady — if anything, ticked up</em>. And the average word is the same length it was in 1965. By these measures, today's hits aren't built from shorter or less-varied words.</p>
+  <figure><img src="figures/02_diversity.png" alt="Unique words per 100 words holding steady or slightly rising"><figcaption>Vocabulary diversity in the first 100 words — flat to slightly rising, not falling.</figcaption></figure>
+  <figure><img src="figures/04_word_length.png" alt="Average word length essentially flat across decades"><figcaption>Average word length is essentially unchanged across fifty years.</figcaption></figure>
+
+  <div class="findings">
+    <h3>The findings</h3>
+    <ul>
+      <li>Hit songs <strong>more than doubled in length</strong> (≈200 → ≈410 words; r = 0.92).</li>
+      <li><strong>Whole-song repetition rose</strong> sharply (compression r = −0.89), partly because songs are longer.</li>
+      <li><strong>Vocabulary richness held steady</strong> (unique words per 100 words even rose ~7%).</li>
+      <li><strong>Word length is flat</strong> — words are no shorter than they were in 1965.</li>
+    </ul>
+  </div>
+
+  <h2>So, simpler?</h2>
+  <p>"Simpler" is the wrong word. Modern hits are <em>longer</em> and lean harder on <em>repeated hooks</em> — which is what people hear and call repetitive — but they aren't made of shorter or less-varied vocabulary. The change is in structure and length, not in the words themselves. It's the same toolkit you can point at any text: I used the identical vocabulary lens on reality TV in my <a href="https://lyhjeremy.github.io/love-island-lexical-analysis/">Love Island lexical analysis</a>, and built it into an <a href="https://lyhjeremy.github.io/epub-reading-level-analyzer/">EPUB reading-level analyzer</a>.</p>
+
+  <div class="note"><strong>Data &amp; method:</strong> Billboard Year-End Hot 100 lyrics, 1965–2015 (public dataset: <a href="https://github.com/walkerkq/musiclyrics">walkerkq/musiclyrics</a>), 4,816 songs with ≥50 words. Lyrics come lowercased with punctuation stripped, so I avoid sentence-based readability and use length-robust vocabulary measures: words per song, unique words in a fixed 100-word window, zlib compression ratio (repetition), and mean word length. Reproduce with <code>fetch_data.py</code> + <code>analyze.py</code> in the <a href="https://github.com/lyhjeremy/lyrics-complexity-over-time">repo</a>.</div>
+
+  <p class="footer">Built with Python (pandas, scipy, matplotlib) · © 2026 Jeremy Lee · MIT License · <a href="https://github.com/lyhjeremy/lyrics-complexity-over-time">source on GitHub</a></p>
+</div>
+</body>
+</html>
