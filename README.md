@@ -6,6 +6,7 @@ nuanced: hit songs **more than doubled in length** and got **more repetitive
 overall**, but the words themselves are **no shorter or less varied**.
 
 > 🌐 **Read the story:** https://lyhjeremy.github.io/lyrics-complexity-over-time/
+> 📖 **In depth:** https://lyhjeremy.github.io/lyrics-complexity-over-time/overview/
 
 ## Findings (4,816 songs)
 - **Length +107%** (≈200 → ≈410 words/song; r = 0.92).
