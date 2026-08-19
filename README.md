@@ -1,16 +1,18 @@
 # Are Song Lyrics Getting Simpler?
 
+Design and copy follow [these standards](https://github.com/lyhjeremy/lyhjeremy/blob/main/DESIGN_STANDARDS.md).
+
 Fifty years of Billboard Year-End Hot 100 hits (1965–2015), analyzed. The popular
 claim is that lyrics got "dumber and more repetitive." The data says it's more
 nuanced: hit songs **more than doubled in length** and got **more repetitive
 overall**, but the words themselves are **no shorter or less varied**.
 
-> 🌐 **Read the story:** https://lyhjeremy.github.io/lyrics-complexity-over-time/
-> 📖 **In depth:** https://lyhjeremy.github.io/lyrics-complexity-over-time/overview/
+> **Read the story:** https://lyhjeremy.github.io/lyrics-complexity-over-time/
+> **In depth:** https://lyhjeremy.github.io/lyrics-complexity-over-time/overview/
 
 ## Findings (4,816 songs)
 - **Length +107%** (≈200 → ≈410 words/song; r = 0.92).
-- **Whole-song repetition up** (compression ratio r = −0.89) — partly a length effect.
+- **Whole-song repetition up** (compression ratio r = −0.89). Partly a length effect.
 - **Vocabulary richness steady** (unique words per 100 words even rose ~7%).
 - **Word length flat** (no change across 50 years).
 
