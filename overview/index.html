@@ -3,55 +3,57 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Are song lyrics getting simpler?: 4,816 Billboard hits, 1965–2015</title>
-<meta name="description" content="Fifty years of Billboard Year-End Hot 100 hits. Songs more than doubled in length and got more repetitive, but the words themselves are no shorter and no less varied." />
-<meta name="theme-color" content="#EDEDE7" />
+<title>Are song lyrics getting simpler? 4,816 Billboard hits, 1965–2015</title>
+<meta name="description" content="Fifty years of Billboard Year-End Hot 100 hits. Songs more than doubled in length and compress harder, but vocabulary per 100 words rose 7% and word length stayed at 3.8 characters." />
+<meta name="theme-color" content="#EEEDE6" />
 <meta property="og:title" content="Are song lyrics getting simpler?" />
-<meta property="og:description" content="The popular claim is that lyrics got dumber. Across 4,816 Billboard hits, half of it holds up and half of it does not." />
+<meta property="og:description" content="Across 4,816 Billboard hits, songs got longer and more repetitive. The words in them did not get simpler." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://lyhjeremy.github.io/lyrics-complexity-over-time/overview/" />
+<link href="" rel="stylesheet" />
 <style>
-@font-face{font-family:"Source Serif 4";src:url("../fonts/SourceSerif4-400.woff2")format("woff2");font-weight:400;font-display:swap}
-@font-face{font-family:"Source Serif 4";src:url("../fonts/SourceSerif4-600.woff2")format("woff2");font-weight:600;font-display:swap}
-@font-face{font-family:"IBM Plex Sans";src:url("../fonts/IBMPlexSans-400.woff2")format("woff2");font-weight:400;font-display:swap}
-@font-face{font-family:"IBM Plex Sans";src:url("../fonts/IBMPlexSans-600.woff2")format("woff2");font-weight:600;font-display:swap}
-@font-face{font-family:"IBM Plex Mono";src:url("../fonts/IBMPlexMono-400.woff2")format("woff2");font-weight:400;font-display:swap}
-
   :root {
-    --paper: #EDEDE7;
-    --card: #F5F5F0;
-    --plate: #F5F5F0;
-    --ink: #1C1E1B;
-    --ink2: #3d3d55;
-    --muted: #52564E;
-    --rule: #C6C7BF;
-    --accent: #2C5852;
-    --accent2: #C2410C;
-    --link: #2C5852;
-    --serif: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
-    --sans: 'Source Sans 3', -apple-system, system-ui, sans-serif;
-    --mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', monospace;
-    --shadow: 0 1px 2px rgba(26,26,46,.05), 0 10px 34px rgba(26,26,46,.07);
+    --paper: #EEEDE6;
+    --card: #F6F5EF;
+    --plate: #F6F5EF;
+    --ink: #1B1E24;
+    --ink2: #4F5560;
+    --muted: #4F5560;
+    --rule: #C8C9C2;
+    --accent: #9E3A2C;
+    --accent2: #284B73;
+    --link: #9E3A2C;
+    --serif: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+    --sans: "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --mono: "IBM Plex Mono", "SF Mono", Menlo, Consolas, monospace;
+    --display: "Newsreader", "Iowan Old Style", Georgia, serif;
+    --edge: #757A80;
     --spine:  92px;
     --col:    min(100% - 2.6rem, 62rem);
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --paper: #14141f;
-      --card: #1c1c2a;
-      --plate: #f7f4ec;
-      --ink: #F2EFE6;
-      --ink2: #C9C4B6;
-      --muted: #918B7D;
-      --rule: #33313f;
-      --accent: #A78BFA;
-      --accent2: #FB923C;
-      --link: #3FB4B9;
-      --shadow: 0 1px 2px rgba(0,0,0,.32), 0 10px 34px rgba(0,0,0,.4);
+      --paper: #181A1F;
+      --card: #21242A;
+      --plate: #21242A;
+      --ink: #E5E6E2;
+      --ink2: #A5AAB3;
+      --muted: #A5AAB3;
+      --rule: #3A3E45;
+      --accent: #D88E80;
+      --accent2: #86A9D6;
+      --link: #D88E80;
+      --edge: #6B7079;
     }
   }
 
-  * { box-sizing: border-box; }
+  @font-face{font-family:"Source Serif 4";src:url("../fonts/SourceSerif4-400.woff2")format("woff2");font-weight:400;font-display:swap}
+  @font-face{font-family:"Source Serif 4";src:url("../fonts/SourceSerif4-600.woff2")format("woff2");font-weight:600;font-display:swap}
+  @font-face{font-family:"IBM Plex Sans";src:url("../fonts/IBMPlexSans-400.woff2")format("woff2");font-weight:400;font-display:swap}
+  @font-face{font-family:"IBM Plex Sans";src:url("../fonts/IBMPlexSans-600.woff2")format("woff2");font-weight:600;font-display:swap}
+  @font-face{font-family:"IBM Plex Mono";src:url("../fonts/IBMPlexMono-400.woff2")format("woff2");font-weight:400;font-display:swap}
+
+  * { box-sizing: border-box; border-radius: 0; }
   html { scroll-behavior: smooth; }
   body {
     margin: 0; background: var(--paper); color: var(--ink);
@@ -210,55 +212,94 @@
     html { scroll-behavior: auto; }
     .btn { }
   }
+  @font-face{font-family:"Newsreader";src:url("../fonts/Newsreader-600.woff2")format("woff2");font-weight:600;font-style:normal;font-display:swap}
+  @font-face{font-family:"Newsreader";src:url("../fonts/Newsreader-400i.woff2")format("woff2");font-weight:400;font-style:italic;font-display:swap}
 
+  .btn:hover { transform: none; background: var(--accent); border-color: var(--accent); color: var(--paper); }
+  .pull { border: 1px solid var(--edge); border-left: 1px solid var(--edge); background: transparent; }
+  .term { background: var(--card); color: var(--ink); border: 1px solid var(--rule); }
+  .term .c { color: var(--muted); } .term .g { color: var(--accent2); } .term .y { color: var(--accent); }
+  .logo, .hero h1, h2, .claim .n, .bignum { font-family: var(--display); }
+
+  /* Language: a well-set book. Newsreader display, italic glosses, notes in the margin. */
+  .logo { font-weight: 600; font-size: 23px; letter-spacing: 0; }
+  .hero h1 { font-weight: 600; font-size: clamp(42px, 6.6vw, 80px); letter-spacing: -.015em; line-height: 1.02; max-width: 16ch; }
+  .kicker { font-family: var(--display); font-style: italic; font-weight: 400; font-size: clamp(20px, 2.3vw, 25px); color: var(--accent2); }
+  h2 { font-weight: 600; letter-spacing: -.01em; font-size: clamp(29px, 3.9vw, 40px); }
+  .claim, .claim:first-child, .claim:nth-child(2) { border-top: 1px solid var(--rule); }
+  .claim .n { font-weight: 600; font-size: 44px; letter-spacing: -.01em; color: var(--accent2); }
+  .bignum { font-weight: 600; color: var(--accent2); }
+  .eyebrow { font-family: var(--display); font-style: italic; text-transform: none; letter-spacing: 0;
+             font-size: 18px; font-weight: 400; color: var(--accent); }
+  :root { --spine: 0px; }
+  .route::before, .stop::before { display: none; }
+  .stop { padding-left: 0; }
+  @media (min-width: 980px) {
+    .stop { display: grid; grid-template-columns: 11rem minmax(0, 1fr); column-gap: 40px; }
+    .stop > * { grid-column: 2; }
+    .stop > .eyebrow { grid-column: 1; grid-row: 1 / span 2; text-align: right; padding-top: 14px;
+                       border-top: 1px solid var(--rule); }
+  }
+
+
+  /* Signature: the four measures set as a book's table of figures. */
+  .measures { margin: 46px 0 0; border-top: 2px solid var(--ink); }
+  .measure { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 4px 24px; padding: 16px 0 14px; border-bottom: 1px solid var(--rule); }
+  .measure .name { font-family: var(--display); font-weight: 600; font-size: 22px; line-height: 1.2; color: var(--ink); }
+  .measure .gloss { grid-column: 1; font-family: var(--display); font-style: italic; font-size: 17px; color: var(--ink2); line-height: 1.45; }
+  .measure .vals { grid-column: 2; grid-row: 1 / span 2; text-align: right; font-family: var(--mono); font-size: 14.5px; color: var(--ink2); white-space: nowrap; align-self: center; }
+  .measure .vals b { display: block; font-weight: 400; font-size: 24px; color: var(--accent2); letter-spacing: -.01em; }
+  .measures-cap { font-family: var(--sans); font-size: 14px; color: var(--muted); margin: 10px 0 0; }
+  @media (max-width: 520px) { .measure { grid-template-columns: 1fr; } .measure .vals { grid-column: 1; grid-row: auto; text-align: left; } }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header class="masthead">
-    <div class="logo"><span class="dot" aria-hidden="true"></span>Are lyrics getting simpler?</div>
+    <div class="logo">Are lyrics getting simpler?</div>
     <div class="tagline">4,816 Billboard hits, 1965–2015</div>
   </header>
 
   <section class="hero">
-    <p class="kicker">The claim is that pop lyrics got dumber.</p>
-    <h1>Half of that is true, and it is not the half people mean.</h1>
+    <p class="kicker">Billboard Year-End Hot 100, fifty years</p>
+    <h1>Hit songs doubled in length and repeat more. Their words did not get simpler.</h1>
 
     <p class="hero-sub">
-      Fifty years of the Billboard Year-End Hot 100, run through four
-      length-robust measures. Hit songs <strong>more than doubled in
-      length</strong> and got measurably <strong>more repetitive</strong>. But the
-      vocabulary held: words per 100 are no less varied than in 1965, and the
-      words themselves are <strong>exactly as long as they always were</strong>.
+      I measured every year-end hit from 1965 to 2015 four ways. The average song
+      went from about 200 words to about 413, and whole songs compress 19% harder,
+      which is what repeated hooks look like to zlib. Vocabulary in the first 100
+      words rose 7%, and the average word is 3.8 characters long at both ends of the
+      period.
     </p>
 
     <div class="cta-row">
       <a class="btn btn-primary" href="../">Read the short version</a>
-      <a class="textlink" href="https://github.com/lyhjeremy/lyrics-complexity-over-time">or the code and data</a>
+      <a class="textlink" href="https://github.com/lyhjeremy/lyrics-complexity-over-time">Code and data on GitHub</a>
     </div>
 
-    <div class="claims">
-      <div class="claim">
-        <div class="n">+107%</div>
-        <p>words per song, from roughly 200 in 1965 to 410 by 2015. The single
-           strongest trend in the whole set, r = 0.92.</p>
+    <div class="measures" role="table" aria-label="The four measures, 1965–69 average against 2010–15 average">
+      <div class="measure" role="row">
+        <span class="name" role="cell">Words per song</span>
+        <span class="gloss" role="cell">length, the strongest trend in the set</span>
+        <span class="vals" role="cell"><b>+107%</b>200 to 413, r = 0.92</span>
       </div>
-      <div class="claim">
-        <div class="n">r = −0.89</div>
-        <p>between year and compression ratio. Later songs squeeze down harder,
-           which is what repetition looks like to a compressor.</p>
+      <div class="measure" role="row">
+        <span class="name" role="cell">Compression ratio</span>
+        <span class="gloss" role="cell">repetition; lower means the lyric squeezes down further</span>
+        <span class="vals" role="cell"><b>−19%</b>0.357 to 0.290, r = −0.89</span>
       </div>
-      <div class="claim">
-        <div class="n">+7%</div>
-        <p>unique words per 100 words. Vocabulary richness did not fall. It
-           drifted slightly <em>up</em>.</p>
+      <div class="measure" role="row">
+        <span class="name" role="cell">Unique words in the first 100</span>
+        <span class="gloss" role="cell">vocabulary, controlled for length</span>
+        <span class="vals" role="cell"><b>+7%</b>57.5 to 61.4, r = 0.58</span>
       </div>
-      <div class="claim">
-        <div class="n">±0</div>
-        <p>change in mean word length across fifty years. Flat. Nobody is using
-           shorter words than they used to.</p>
+      <div class="measure" role="row">
+        <span class="name" role="cell">Characters per word</span>
+        <span class="gloss" role="cell">word length</span>
+        <span class="vals" role="cell"><b>−0.3%</b>3.84 to 3.83, r = −0.46</span>
       </div>
     </div>
+    <p class="measures-cap">1965–69 average against 2010–15 average, from <code>tables/trends.csv</code>. r is the correlation of the yearly mean with year.</p>
   </section>
 </div>
 
@@ -266,142 +307,136 @@
 <div class="route">
 
   <section class="stop">
-    <p class="eyebrow">Start · the problem with the question</p>
-    <h2>"Simpler" is four different measurements</h2>
+    <p class="eyebrow">The question</p>
+    <h2>"Simpler" covers four separate measurements</h2>
     <p>
-      The usual version of this argument leans on one statistic, generally a
-      readability score, and readability scores are a poor fit for song lyrics.
-      They want sentences, and lyrics as published have almost no punctuation to
-      find sentences with.
+      The usual version of this argument rests on one statistic, often a readability
+      score. Readability formulas need sentences, and this dataset has none: the
+      lyrics come lowercased with the punctuation stripped.
     </p>
     <p>
-      So this pulls the question apart into four things that can each be measured
-      without sentence boundaries: <strong>how long</strong> a song is,
-      <strong>how repetitive</strong> it is, <strong>how varied</strong> its
-      vocabulary is, and <strong>how long its words</strong> are. They turn out to
-      disagree with each other, which is the interesting part.
+      So I split the question into four things that can be counted without sentence
+      boundaries: how long a song is, how much it repeats, how varied its vocabulary
+      is, and how long its words are. They move in different directions, and that
+      disagreement is the result.
     </p>
     <p>
-      Two of the four are also deliberately length-robust. A longer song will
-      naturally have more unique words in total, so counting unique words per
-      song would just re-measure length. Counting them in a fixed 100-word window
-      does not.
+      The vocabulary measure counts unique words among each song's first 100 words.
+      Counting unique words across the whole song would mostly re-measure length,
+      since a longer song has more room for new words.
     </p>
   </section>
 
   <section class="stop stop--key">
-    <p class="eyebrow">↓ finding one</p>
+    <p class="eyebrow">Finding one</p>
     <h2>Songs got much longer</h2>
 
     <div class="bignum">2.1×</div>
-    <p class="bignum-note">the words in a hit song, 1965 against 2015.</p>
+    <p class="bignum-note">words in the average hit, 2010–15 against 1965–69.</p>
 
     <p>
-      From about 200 words to about 410, with a correlation of <strong>0.92</strong>
-      against year. This is the cleanest trend in the data and it drives a lot of
-      what follows, which is why it comes first.
+      The yearly mean rises from about 200 words to about 413, with a correlation of
+      <strong>0.92</strong> against year, a slope of about 6 words a year. This is the
+      cleanest trend in the data, and the repetition finding below depends on it.
     </p>
     <figure>
       <div class="plate">
         <img width="1639" height="919" src="../figures/01_length.png" fetchpriority="high"
-          alt="Scatter of mean words per song by year from 1965 to 2015 with a strong upward fitted line, rising from roughly 200 words to roughly 410." />
+          alt="Mean words per song by year, 1965 to 2015, climbing from about 200 to over 400 along a fitted trend with r of 0.92." />
       </div>
-      <figcaption>Words per song by year. The strongest single trend in the set.</figcaption>
+      <figcaption>Words per song, yearly mean, with a least-squares trend line. Produced by <code>analyze.py</code>.</figcaption>
     </figure>
   </section>
 
   <section class="stop stop--warn">
-    <p class="eyebrow">↓ finding two, with an asterisk</p>
-    <h2>More repetitive: partly because they are longer</h2>
+    <p class="eyebrow">Finding two, with a caveat</p>
+    <h2>More repetitive, partly because longer</h2>
     <p>
-      Repetition here is measured by compression: run the lyric through zlib and
-      see how far it squeezes. Text that repeats itself compresses better. The
-      correlation with year is <strong>−0.89</strong>, so later songs really are
-      more repetitive as whole documents.
+      Repetition is measured by compression: run the lyric through zlib and divide
+      the compressed size by the original. Text that repeats itself compresses
+      better. The ratio falls from 0.357 to 0.290, with r = <strong>−0.89</strong>
+      against year, so later songs repeat more as whole documents.
     </p>
     <p>
-      The asterisk matters. <strong>Length and compressibility are entangled.</strong>
-      A longer text gives a compressor more history to exploit, so some of this
-      trend is the length finding wearing a different hat. The honest statement is
-      that whole songs repeat more, not that any given line does.
+      Length and compressibility are entangled. A longer text gives the compressor
+      more history to match against, so part of this trend is the length finding
+      measured a second way. What the data supports is that whole songs repeat more.
+      It says nothing about whether any given line does.
     </p>
     <figure>
       <div class="plate">
         <img width="1639" height="919" src="../figures/03_repetition.png" loading="lazy"
-          alt="Compression ratio by year trending downward from 1965 to 2015, indicating lyrics that compress more and therefore repeat more." />
+          alt="zlib compression ratio by year falling from about 0.36 to about 0.29 between 1965 and 2015, meaning lyrics repeat more." />
       </div>
       <figcaption>Compression ratio by year. Lower means more repetitive.</figcaption>
     </figure>
   </section>
 
   <section class="stop">
-    <p class="eyebrow">↓ finding three</p>
+    <p class="eyebrow">Finding three</p>
     <h2>The vocabulary did not shrink</h2>
     <p>
-      This is where the popular claim comes apart. Measured in a fixed 100-word
-      window, so length cannot contaminate it, unique-word count <strong>rose about
-      7%</strong> across the fifty years. Not a large move, and not the direction
-      the "dumbing down" story predicts.
+      This is where the popular claim fails. Unique words among the first 100 rose
+      from 57.5 to 61.4, about <strong>7%</strong>, with r = 0.58. That is a small
+      move, and it goes the opposite way from the "dumbing down" story.
     </p>
     <p>
-      Mean word length is flatter still: essentially unchanged from 1965 to 2015.
-      Whatever else happened to pop music, nobody started reaching for shorter words.
+      Mean word length went from 3.84 to 3.83 characters. The slope is
+      statistically detectable (r = −0.46) and is one hundredth of a character over
+      fifty years, which is no practical change.
     </p>
     <div class="panels">
       <figure>
         <div class="plate">
           <img width="1639" height="919" src="../figures/02_diversity.png" loading="lazy"
-            alt="Unique words per 100-word window by year, roughly flat with a slight upward drift across the fifty-year span." />
+            alt="Unique words among the first 100 by year, drifting up from about 0.57 to about 0.61 between 1965 and 2015." />
         </div>
-        <figcaption><strong>Vocabulary richness</strong>: flat, drifting slightly up.</figcaption>
+        <figcaption>Vocabulary in the first 100 words: slightly up.</figcaption>
       </figure>
       <figure>
         <div class="plate">
           <img width="1639" height="919" src="../figures/04_word_length.png" loading="lazy"
-            alt="Mean word length in characters by year, a essentially horizontal line across the whole period." />
+            alt="Mean characters per word by year, staying between about 3.75 and 3.96 with no meaningful trend." />
         </div>
-        <figcaption><strong>Word length</strong>: no trend at all.</figcaption>
+        <figcaption>Characters per word: flat at about 3.8.</figcaption>
       </figure>
     </div>
     <div class="pull">
-      <p>Pop lyrics did not get simpler. They got longer, and they say the same
-         things more times.</p>
-      <span class="who">The four measures, reconciled</span>
+      <p>Hits got longer and say the same lines more times. The words they use are as
+         varied and as long as they were in 1965.</p>
+      <span class="who">The four measures together</span>
     </div>
   </section>
 
   <section class="stop stop--warn">
-    <p class="eyebrow">↓ what this cannot tell you</p>
-    <h2>Chart hits, not music</h2>
+    <p class="eyebrow">Limitations</p>
+    <h2>What this does not show</h2>
     <p>
-      This is the Billboard Year-End Hot 100, which is a commercial ranking, not a
-      sample of what was recorded. It tracks what sold. A genuine shift in the
-      chart's genre mix. The arrival of rap, which is both longer and denser,
-      moves these lines without anybody's writing changing at all.
+      The Billboard Year-End Hot 100 is a sales ranking. It records what sold, and a
+      change in the chart's genre mix moves every line here even if no songwriter
+      changed how they write. The analysis does not break results out by genre, so
+      it cannot say how much of the length trend comes from any one style.
     </p>
     <p>
-      The lyrics also arrive lowercased with punctuation stripped, which is why
-      every measure here avoids sentences. It is a real constraint on the dataset
-      rather than a choice, and it rules out the readability scores this question
-      usually gets answered with.
-    </p>
-    <p>
-      Songs under 50 words are excluded, so instrumentals and fragments do not
-      distort the vocabulary windows.
+      Without punctuation there are no sentences, which rules out the readability
+      formulas this question is usually answered with. Songs under 50 words are
+      dropped, which removes instrumentals and fragments. Every number is a yearly
+      mean of roughly 86 to 100 songs, so single years are noisy.
     </p>
   </section>
 
   <section class="stop stop--end">
-    <p class="eyebrow">Finish · how it was built</p>
+    <p class="eyebrow">Method</p>
     <h2>Where the numbers come from</h2>
     <dl class="specs">
       <div class="spec"><dt>Data</dt><dd>Billboard Year-End Hot 100 lyrics 1965–2015, from the public <a href="https://github.com/walkerkq/musiclyrics">walkerkq/musiclyrics</a> dataset</dd></div>
-      <div class="spec"><dt>Sample</dt><dd>4,816 songs, after dropping anything under 50 words</dd></div>
-      <div class="spec"><dt>Length</dt><dd>Words per song</dd></div>
-      <div class="spec"><dt>Richness</dt><dd>Unique words within a fixed 100-word window, so it cannot re-measure length</dd></div>
-      <div class="spec"><dt>Repetition</dt><dd>zlib compression ratio over the whole lyric</dd></div>
-      <div class="spec"><dt>Built with</dt><dd>Python, pandas, matplotlib</dd></div>
-      <div class="spec"><dt>Related</dt><dd>The same lens, pointed at television, in the <a href="https://lyhjeremy.github.io/love-island-lexical-analysis/">Love Island lexical analysis</a>, and turned into a tool in the <a href="https://lyhjeremy.github.io/epub-reading-level-analyzer/">EPUB reading-level analyzer</a></dd></div>
+      <div class="spec"><dt>Sample</dt><dd>4,816 songs across 51 years, after dropping anything under 50 words</dd></div>
+      <div class="spec"><dt>Length</dt><dd>Whitespace tokens per song</dd></div>
+      <div class="spec"><dt>Vocabulary</dt><dd>Unique tokens among the first 100, divided by 100</dd></div>
+      <div class="spec"><dt>Repetition</dt><dd>zlib (level 6) compressed bytes over raw bytes for the whole lyric</dd></div>
+      <div class="spec"><dt>Trend</dt><dd>Least-squares fit of the yearly mean on year (scipy <code>linregress</code>); change compares the 1965–69 and 2010–15 averages</dd></div>
+      <div class="spec"><dt>Built with</dt><dd>Python, pandas, SciPy, matplotlib</dd></div>
+      <div class="spec"><dt>Related</dt><dd>The same measures applied to reality TV in the <a href="https://lyhjeremy.github.io/love-island-lexical-analysis/">Love Island lexical analysis</a>, and packaged as a browser tool in the <a href="https://lyhjeremy.github.io/epub-reading-level-analyzer/">EPUB reading-level analyzer</a></dd></div>
     </dl>
   </section>
 
@@ -410,10 +445,10 @@
 
 <div class="wrap">
   <section class="close">
-    <h2>Longer and more repetitive, not simpler</h2>
+    <h2>Longer and more repetitive, with the same words</h2>
     <div class="cta-row">
       <a class="btn btn-primary" href="../">Read the short version</a>
-      <a class="textlink" href="https://github.com/lyhjeremy/lyrics-complexity-over-time">or the code and data</a>
+      <a class="textlink" href="https://github.com/lyhjeremy/lyrics-complexity-over-time">Code and data on GitHub</a>
     </div>
   </section>
 
