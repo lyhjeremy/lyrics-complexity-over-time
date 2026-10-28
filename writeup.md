@@ -1,20 +1,29 @@
 # Are song lyrics getting simpler? Billboard Hot 100, 1965–2015
 
-**Question.** Have hit-song lyrics become simpler and more repetitive?
+Hit songs from 2010–15 are about twice as long as hits from the late 1960s, and as whole documents they repeat more. Their vocabulary did not shrink, though, and the words in them are the same length they were in 1965. That is the short answer to the claim that pop lyrics have been getting simpler and more repetitive, which is what I set out to test.
 
-**Data.** Billboard Year-End Hot 100 lyrics from 1965 to 2015 (`walkerkq/musiclyrics`), 4,816 songs with at least 50 words. The lyrics are lowercased with punctuation stripped, which rules out sentence-based readability scores.
+## Data and measures
 
-**Measures.** Each song gets four scores, then songs are averaged by year: words per song; unique words among the first 100 words (lexical diversity controlled for length); zlib compression ratio (lower means more repetitive); and mean word length in characters.
+The lyrics are the Billboard Year-End Hot 100 from 1965 to 2015 in the `walkerkq/musiclyrics` dataset: 4,816 songs once anything under 50 words is dropped. They come lowercased with the punctuation stripped, so there are no sentences to feed a readability score. I scored each song four ways and averaged the scores by year:
 
-**Results** (1965–69 average against 2010–15 average, from `tables/trends.csv`):
+- words per song;
+- unique words among the first 100 (lexical diversity, controlled for length);
+- zlib compression ratio, where lower means more repetitive;
+- mean word length in characters.
 
-- Words per song: 200 to 413, +107%, r = 0.92.
-- Compression ratio: 0.357 to 0.290, −19%, r = −0.89. Whole songs repeat more.
-- Unique words in the first 100: 57.5 to 61.4, +7%, r = 0.58. Slightly up.
-- Characters per word: 3.84 to 3.83, −0.3%. The slope is statistically detectable (r = −0.46) but amounts to one hundredth of a character.
+## Results
 
-**Interpretation.** "Simpler" is the wrong word. Hits are much longer and lean harder on repeated hooks, which listeners hear as repetition, but the vocabulary is no less varied and the words are no shorter. The compression measure is partly a length artifact, since longer songs give the compressor more to match. The length-controlled diversity measure is the check on that.
+Comparing the 1965–69 average with the 2010–15 average (from `tables/trends.csv`):
 
-**Limitations.** The chart is a sales ranking, so changes in genre mix move every measure, and the analysis does not split by genre. Each yearly mean rests on 86 to 100 songs.
+- Words per song went from 200 to 413, +107%, r = 0.92.
+- The compression ratio fell from 0.357 to 0.290, −19%, r = −0.89, so whole songs repeat more.
+- Unique words in the first 100 rose slightly, from 57.5 to 61.4, +7%, r = 0.58.
+- Characters per word went from 3.84 to 3.83, −0.3%. The slope is statistically detectable (r = −0.46), but it amounts to one hundredth of a character.
+
+"Simpler" is the wrong word for this. Hits got much longer and lean harder on repeated hooks, which listeners hear as repetition; the vocabulary is at least as varied as before and the words are no shorter. One caution on the repetition result: compression is partly a length artifact, because a longer song gives the compressor more material to match against. The length-controlled diversity measure is there as the check on that.
+
+## Limitations
+
+The Year-End chart is a sales ranking, so any change in its genre mix moves every one of these measures, and the analysis does not split results by genre. Each yearly mean rests on 86 to 100 songs.
 
 Code: `analyze.py`. Figures: `figures/`.
