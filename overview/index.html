@@ -242,14 +242,40 @@
   }
 
 
-  /* Signature: the four measures set as a book's table of figures. */
-  .measures { margin: 46px 0 0; border-top: 2px solid var(--ink); }
-  .measure { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 4px 24px; padding: 16px 0 14px; border-bottom: 1px solid var(--rule); }
-  .measure .name { font-family: var(--display); font-weight: 600; font-size: 22px; line-height: 1.2; color: var(--ink); }
-  .measure .gloss { grid-column: 1; font-family: var(--display); font-style: italic; font-size: 17px; color: var(--ink2); line-height: 1.45; }
-  .measure .vals { grid-column: 2; grid-row: 1 / span 2; text-align: right; font-family: var(--mono); font-size: 14.5px; color: var(--ink2); white-space: nowrap; align-self: center; }
-  .measure .vals b { display: block; font-weight: 400; font-size: 24px; color: var(--accent2); letter-spacing: -.01em; }
-  .measures-cap { font-family: var(--sans); font-size: 14px; color: var(--muted); margin: 10px 0 0; }
+  /* Signature: fifty years you can scrub, four measures on one index scale. */
+  .scrub { margin: 40px 0 0; border-top: 2px solid var(--ink); padding-top: 14px; }
+  .scrub-bar { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 20px; }
+  .scrub-yr { font-family: var(--display); font-weight: 600; font-size: clamp(44px, 7vw, 72px); line-height: 1; color: var(--ink); font-variant-numeric: tabular-nums; min-width: 3.2ch; }
+  .scrub-n { font-family: var(--display); font-style: italic; font-size: 18px; color: var(--ink2); }
+  .scrub-ctl { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; margin: 14px 0 0; }
+  .scrub-ctl input[type=range] { flex: 1 1 16rem; accent-color: var(--accent); min-width: 0; }
+  .seg { display: inline-flex; border: 1px solid var(--edge); }
+  .seg button { font: 600 13px/1 var(--sans); padding: 9px 12px; background: var(--card); color: var(--ink); border: 0; cursor: pointer; }
+  .seg button + button { border-left: 1px solid var(--edge); }
+  .seg button[aria-pressed=true] { background: var(--accent); color: var(--paper); }
+  .sm-grid { display: grid; grid-template-columns: 1fr; gap: 0 36px; margin-top: 18px; }
+  @media (min-width: 720px) { .sm-grid { grid-template-columns: 1fr 1fr; } }
+  .sm { border-top: 1px solid var(--rule); padding: 12px 0 8px; }
+  .sm-h { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .sm-h h3 { font-family: var(--display); font-weight: 600; font-size: 20px; margin: 0; letter-spacing: 0; }
+  .sm-v { font-family: var(--mono); font-size: 15px; color: var(--ink); white-space: nowrap; }
+  .sm-g { font-family: var(--display); font-style: italic; font-size: 16px; color: var(--ink2); margin: 2px 0 4px; }
+  .sm-d { font-family: var(--mono); font-size: 13px; color: var(--ink2); }
+  .sm svg { display: block; width: 100%; height: auto; touch-action: pan-y; cursor: crosshair; }
+  .sm svg text { font-family: var(--mono); font-size: 10.5px; fill: var(--ink2); }
+  .sm .ax { stroke: var(--rule); stroke-width: 1; }
+  .sm .base { stroke: var(--edge); stroke-width: 1; stroke-dasharray: 2 3; }
+  .sm .ln { fill: none; stroke: var(--accent2); stroke-width: 1.8; }
+  .sm .tr { fill: none; stroke: var(--ink2); stroke-width: 1; stroke-dasharray: 5 4; }
+  .sm .cur { stroke: var(--accent); stroke-width: 1.2; }
+  .sm .dot { fill: var(--accent); }
+  .scrub-cap { font-family: var(--sans); font-size: 14px; color: var(--muted); margin: 12px 0 0; line-height: 1.5; max-width: 66ch; }
+  .measures { margin: 30px 0 0; border-top: 1px solid var(--rule); }
+  .measure { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 2px 24px; padding: 12px 0 10px; border-bottom: 1px solid var(--rule); }
+  .measure .name { font-family: var(--display); font-weight: 600; font-size: 19px; line-height: 1.2; color: var(--ink); }
+  .measure .gloss { grid-column: 1; font-family: var(--display); font-style: italic; font-size: 16px; color: var(--ink2); line-height: 1.4; }
+  .measure .vals { grid-column: 2; grid-row: 1 / span 2; text-align: right; font-family: var(--mono); font-size: 14px; color: var(--ink2); white-space: nowrap; align-self: center; }
+  .measure .vals b { display: block; font-weight: 400; font-size: 21px; color: var(--accent2); }
   @media (max-width: 520px) { .measure { grid-template-columns: 1fr; } .measure .vals { grid-column: 1; grid-row: auto; text-align: left; } }
 </style>
 </head>
@@ -265,10 +291,10 @@
     <h1>Hit songs doubled in length and repeat more. Their words did not get simpler.</h1>
 
     <p class="hero-sub">
-      I measured every year-end hit from 1965 to 2015 four ways. The average song
-      went from about 200 words to about 413, and whole songs compress 19% harder
-      (repeated hooks are what zlib sees). Vocabulary in the first 100 words rose 7%,
-      and the average word was 3.8 characters long in 1965–69 and still 3.8 in 2010–15.
+      I scored every year-end hit from 1965 to 2015 four ways. The average song went
+      from about 200 words to about 413, and whole songs compress 19% harder, which is
+      what repeated hooks look like to zlib. Vocabulary in the first 100 words rose 7%.
+      The average word was 3.8 characters long in 1965–69 and still 3.8 in 2010–15.
     </p>
 
     <div class="cta-row">
@@ -276,10 +302,50 @@
       <a class="textlink" href="https://github.com/lyhjeremy/lyrics-complexity-over-time">Code and data on GitHub</a>
     </div>
 
+    <figure class="scrub" id="scrub" aria-labelledby="scrub-cap">
+      <div class="scrub-bar">
+        <span class="scrub-yr" id="scrub-yr" aria-live="polite">2015</span>
+        <span class="scrub-n" id="scrub-n">98 songs in that year's chart</span>
+      </div>
+      <div class="scrub-ctl">
+        <label for="scrub-range" class="scrub-n">Year</label>
+        <input type="range" id="scrub-range" min="1965" max="2015" step="1" value="2015" />
+        <span class="seg" role="group" aria-label="Vertical scale">
+          <button type="button" id="sc-index" aria-pressed="true">One scale, 1965–69 = 100</button>
+          <button type="button" id="sc-own" aria-pressed="false">Each on its own scale</button>
+        </span>
+      </div>
+      <div class="sm-grid" id="sm-grid"></div>
+      <figcaption class="scrub-cap" id="scrub-cap">
+        Yearly means from <code>tables/by_year.csv</code>, written by <code>analyze.py</code>.
+        Drag across any panel, use the slider, or focus a panel and press the arrow keys.
+        On the shared scale 100 is the 1965–69 average (dotted line); the dashed line is
+        a least-squares trend through the yearly means.
+      </figcaption>
+      <noscript>
+        <img src="../figures/01_length.png" alt="Mean words per song by year, 1965 to 2015, climbing from about 200 to over 400 along a fitted trend with r of 0.92." />
+      </noscript>
+    </figure>
+  </section>
+</div>
+
+<div class="wrap">
+<div class="route">
+
+  <section class="stop">
+    <p class="eyebrow">The question</p>
+    <h2>"Simpler" is four measurements, and they disagree</h2>
+    <p>
+      The usual version of this argument rests on a readability score. Readability
+      formulas need sentences, and this dataset has none: the lyrics come lowercased
+      with the punctuation stripped. So I counted four things that need no sentence
+      boundaries: how long a song is, how much it repeats, how varied its vocabulary
+      is, and how long its words are.
+    </p>
     <div class="measures" role="table" aria-label="The four measures, 1965–69 average against 2010–15 average">
       <div class="measure" role="row">
         <span class="name" role="cell">Words per song</span>
-        <span class="gloss" role="cell">length, the strongest trend in the set</span>
+        <span class="gloss" role="cell">length</span>
         <span class="vals" role="cell"><b>+107%</b>200 to 413, r = 0.92</span>
       </div>
       <div class="measure" role="row">
@@ -289,7 +355,7 @@
       </div>
       <div class="measure" role="row">
         <span class="name" role="cell">Unique words in the first 100</span>
-        <span class="gloss" role="cell">vocabulary, controlled for length</span>
+        <span class="gloss" role="cell">vocabulary, with length held fixed</span>
         <span class="vals" role="cell"><b>+7%</b>57.5 to 61.4, r = 0.58</span>
       </div>
       <div class="measure" role="row">
@@ -298,129 +364,66 @@
         <span class="vals" role="cell"><b>−0.3%</b>3.84 to 3.83, r = −0.46</span>
       </div>
     </div>
-    <p class="measures-cap">1965–69 average against 2010–15 average, from <code>tables/trends.csv</code>. r is the correlation of the yearly mean with year.</p>
-  </section>
-</div>
-
-<div class="wrap">
-<div class="route">
-
-  <section class="stop">
-    <p class="eyebrow">The question</p>
-    <h2>"Simpler" covers four separate measurements</h2>
-    <p>
-      The usual version of this argument rests on one statistic, often a readability
-      score. Readability formulas need sentences, and this dataset has none: the
-      lyrics come lowercased with the punctuation stripped.
-    </p>
-    <p>
-      So I split the question into four things that can be counted without sentence
-      boundaries: how long a song is, how much it repeats, how varied its vocabulary
-      is, and how long its words are. They move in different directions, and that
-      disagreement is the result.
-    </p>
-    <p>
-      The vocabulary measure counts unique words among each song's first 100 words.
-      Counting unique words across the whole song would mostly re-measure length,
-      since a longer song has more room for new words.
-    </p>
+    <p style="margin-top:12px;font-family:var(--sans);font-size:14px;color:var(--muted)">1965–69 average against 2010–15 average, from <code>tables/trends.csv</code>. r is the correlation of the yearly mean with year.</p>
   </section>
 
   <section class="stop stop--key">
-    <p class="eyebrow">Finding one</p>
+    <p class="eyebrow">Length</p>
     <h2>Songs got much longer</h2>
-
-    <div class="bignum">2.1×</div>
-    <p class="bignum-note">words in the average hit, 2010–15 against 1965–69.</p>
-
     <p>
-      The yearly mean rises from about 200 words to about 413, with a correlation of
-      <strong>0.92</strong> against year, a slope of about 6 words a year. This is the
-      cleanest trend in the data, and the repetition finding below depends on it.
+      The yearly mean rises from about 200 words to about 413, roughly 6 words a year,
+      with r = <strong>0.92</strong> against year. It is the cleanest trend in the data.
+      The peak came in the mid-2000s, when 2003's chart averaged 501 words; 2012 dropped
+      back to 369.
     </p>
-    <figure>
-      <div class="plate">
-        <img width="1639" height="919" src="../figures/01_length.png" fetchpriority="high"
-          alt="Mean words per song by year, 1965 to 2015, climbing from about 200 to over 400 along a fitted trend with r of 0.92." />
-      </div>
-      <figcaption>Words per song, yearly mean, with a least-squares trend line. Produced by <code>analyze.py</code>.</figcaption>
-    </figure>
   </section>
 
   <section class="stop stop--warn">
-    <p class="eyebrow">Finding two, with a caveat</p>
+    <p class="eyebrow">Repetition, with a caveat</p>
     <h2>More repetitive, partly because longer</h2>
     <p>
-      Repetition is measured by compression: run the lyric through zlib and divide
-      the compressed size by the original. Text that repeats itself compresses
-      better. The ratio falls from 0.357 to 0.290, with r = <strong>−0.89</strong>
-      against year, so later songs repeat more as whole documents.
+      Run a lyric through zlib and divide the compressed size by the original: text
+      that repeats itself compresses better. The ratio falls from 0.357 to 0.290
+      (r = <strong>−0.89</strong>), so later songs repeat more as whole documents.
     </p>
     <p>
-      Length and compressibility are entangled: a longer text gives the compressor
-      more history to match against, so part of this trend is the length finding
-      measured a second way. The data supports the claim that whole songs repeat
-      more, and is silent on whether any given line does.
+      A longer text also gives the compressor more history to match against, so part
+      of this trend is the length trend measured a second way. The data supports the
+      claim that whole songs repeat more. It says nothing about whether any single
+      line does.
     </p>
-    <figure>
-      <div class="plate">
-        <img width="1639" height="919" src="../figures/03_repetition.png" loading="lazy"
-          alt="zlib compression ratio by year falling from about 0.36 to about 0.29 between 1965 and 2015, meaning lyrics repeat more." />
-      </div>
-      <figcaption>Compression ratio by year. Lower means more repetitive.</figcaption>
-    </figure>
   </section>
 
   <section class="stop">
-    <p class="eyebrow">Finding three</p>
+    <p class="eyebrow">Vocabulary</p>
     <h2>The vocabulary did not shrink</h2>
     <p>
-      Here the popular claim fails. Unique words among the first 100 rose from 57.5
-      to 61.4, about <strong>7%</strong>, with r = 0.58; a small move, and in the
-      opposite direction from the "dumbing down" story.
+      Here the popular claim fails. Counting only the first 100 words of each song, so
+      that length can't inflate the count, unique words rose from 57.5 to 61.4, about
+      <strong>7%</strong> (r = 0.58). That is a small move, in the opposite direction
+      from the dumbing-down story.
     </p>
     <p>
-      Mean word length went from 3.84 to 3.83 characters. The slope is
-      statistically detectable (r = −0.46) and is one hundredth of a character over
-      fifty years, which is no practical change.
+      Mean word length went from 3.84 to 3.83 characters. With 51 yearly points the
+      slope is statistically detectable (r = −0.46), and it amounts to one hundredth of
+      a character over fifty years. Switch the chart above to the shared scale and the
+      line is flat.
     </p>
-    <div class="panels">
-      <figure>
-        <div class="plate">
-          <img width="1639" height="919" src="../figures/02_diversity.png" loading="lazy"
-            alt="Unique words among the first 100 by year, drifting up from about 0.57 to about 0.61 between 1965 and 2015." />
-        </div>
-        <figcaption>Vocabulary in the first 100 words: slightly up.</figcaption>
-      </figure>
-      <figure>
-        <div class="plate">
-          <img width="1639" height="919" src="../figures/04_word_length.png" loading="lazy"
-            alt="Mean characters per word by year, staying between about 3.75 and 3.96 with no meaningful trend." />
-        </div>
-        <figcaption>Characters per word: flat at about 3.8.</figcaption>
-      </figure>
-    </div>
-    <div class="pull">
-      <p>Hits got longer and say the same lines more times. The words they use are as
-         varied and as long as they were in 1965.</p>
-      <span class="who">The four measures together</span>
-    </div>
   </section>
 
   <section class="stop stop--warn">
     <p class="eyebrow">Limitations</p>
     <h2>What this does not show</h2>
     <p>
-      The Billboard Year-End Hot 100 is a sales ranking. It records what sold, and a
-      change in the chart's genre mix moves every line here even if no songwriter
-      changed how they write. The analysis does not break results out by genre, so
-      it cannot say how much of the length trend comes from any one style.
+      The Billboard Year-End Hot 100 is a sales ranking. A change in the chart's genre
+      mix moves every line here even if no songwriter changed how they write, and the
+      analysis does not break results out by genre.
     </p>
     <p>
       Without punctuation there are no sentences, which rules out the readability
-      formulas this question is usually answered with. Songs under 50 words are
-      dropped, which removes instrumentals and fragments. Every number is a yearly
-      mean of roughly 86 to 100 songs, so single years are noisy.
+      formulas this question is usually answered with. Songs under 50 words are dropped,
+      which removes instrumentals and fragments. Each yearly mean rests on 86 to 100
+      songs, so single years are noisy.
     </p>
   </section>
 
@@ -434,7 +437,7 @@
       <div class="spec"><dt>Vocabulary</dt><dd>Unique tokens among the first 100, divided by 100</dd></div>
       <div class="spec"><dt>Repetition</dt><dd>zlib (level 6) compressed bytes over raw bytes for the whole lyric</dd></div>
       <div class="spec"><dt>Trend</dt><dd>Least-squares fit of the yearly mean on year (scipy <code>linregress</code>); change compares the 1965–69 and 2010–15 averages</dd></div>
-      <div class="spec"><dt>Built with</dt><dd>Python, pandas, SciPy, matplotlib</dd></div>
+      <div class="spec"><dt>Built with</dt><dd>Python, pandas, SciPy, matplotlib; the chart on this page is hand-written SVG drawn from <code>tables/by_year.csv</code></dd></div>
       <div class="spec"><dt>Related</dt><dd>The same measures applied to reality TV in the <a href="https://lyhjeremy.github.io/love-island-lexical-analysis/">Love Island lexical analysis</a>, and packaged as a browser tool in the <a href="https://lyhjeremy.github.io/epub-reading-level-analyzer/">EPUB reading-level analyzer</a></dd></div>
     </dl>
   </section>
@@ -444,7 +447,6 @@
 
 <div class="wrap">
   <section class="close">
-    <h2>Longer and more repetitive, with the same words</h2>
     <div class="cta-row">
       <a class="btn btn-primary" href="../">Read the short version</a>
       <a class="textlink" href="https://github.com/lyhjeremy/lyrics-complexity-over-time">Code and data on GitHub</a>
@@ -460,5 +462,119 @@
     </p>
   </footer>
 </div>
+
+<script>
+(function () {
+  // tables/by_year.csv: year, words, unique words per first 100, compression ratio, chars per word, songs
+  var D = [[1965,195.5,54.84,0.3429,3.758,93],[1966,190.8,58.05,0.3654,3.92,91],[1967,189.7,59.45,0.3728,3.859,94],[1968,215.8,57.05,0.3467,3.806,88],[1969,206.8,57.93,0.3556,3.866,89],[1970,225.4,56.77,0.3314,3.862,95],[1971,223.5,58.61,0.3429,3.856,86],[1972,227.8,59.19,0.3539,3.841,86],[1973,230.9,59.76,0.3476,3.886,94],[1974,225.3,58.33,0.3359,3.886,89],[1975,228.0,59.44,0.3372,3.885,90],[1976,253.5,56.56,0.3123,3.839,93],[1977,231.5,60.34,0.3435,3.842,90],[1978,243.8,62.52,0.3299,3.879,92],[1979,255.0,59.75,0.3147,3.788,91],[1980,243.3,60.39,0.3238,3.864,92],[1981,245.5,61.29,0.3277,3.853,91],[1982,261.2,61.05,0.3174,3.859,91],[1983,286.2,62.09,0.3104,3.921,98],[1984,269.1,62.02,0.3138,3.959,97],[1985,277.6,61.88,0.3179,3.832,95],[1986,252.9,62.65,0.3301,3.893,95],[1987,272.5,62.03,0.3177,3.834,96],[1988,293.4,62.79,0.3067,3.856,97],[1989,319.3,62.68,0.3062,3.78,99],[1990,348.9,61.71,0.3025,3.825,96],[1991,318.5,62.69,0.3212,3.87,94],[1992,326.2,62.24,0.3264,3.812,96],[1993,380.1,62.2,0.3111,3.804,97],[1994,348.8,60.37,0.3194,3.84,93],[1995,370.5,60.61,0.3071,3.839,95],[1996,352.6,60.74,0.3207,3.819,90],[1997,388.7,60.26,0.3078,3.766,92],[1998,445.9,59.73,0.3002,3.784,94],[1999,374.3,63.74,0.3068,3.821,97],[2000,400.6,63.82,0.2866,3.816,98],[2001,440.3,63.09,0.2992,3.787,97],[2002,460.4,62.05,0.3012,3.791,99],[2003,500.8,63.11,0.3139,3.774,97],[2004,487.8,61.55,0.3092,3.783,97],[2005,482.4,61.46,0.3091,3.788,98],[2006,499.2,60.8,0.3019,3.744,96],[2007,486.2,60.03,0.2917,3.745,95],[2008,445.9,59.86,0.288,3.792,97],[2009,449.2,61.65,0.2886,3.807,97],[2010,450.9,60.12,0.2898,3.831,99],[2011,446.6,63.0,0.2881,3.799,100],[2012,368.7,62.41,0.2932,3.899,98],[2013,386.5,60.57,0.2879,3.862,96],[2014,413.1,60.78,0.2867,3.805,98],[2015,409.8,61.68,0.2925,3.787,98]];
+  var M = [
+    { k: 1, h: "Words per song", g: "doubled", f: function (v) { return Math.round(v) + " words"; } },
+    { k: 3, h: "Compression ratio", g: "falling: whole songs repeat more", f: function (v) { return v.toFixed(3); } },
+    { k: 2, h: "Unique words in the first 100", g: "up slightly", f: function (v) { return v.toFixed(1) + " of 100"; } },
+    { k: 4, h: "Characters per word", g: "flat", f: function (v) { return v.toFixed(2) + " chars"; } }
+  ];
+  var W = 320, H = 150, L = 38, R = 8, T = 10, B = 22;
+  var NS = "http://www.w3.org/2000/svg";
+  var grid = document.getElementById("sm-grid");
+  var yrEl = document.getElementById("scrub-yr"), nEl = document.getElementById("scrub-n");
+  var range = document.getElementById("scrub-range");
+  var bIdx = document.getElementById("sc-index"), bOwn = document.getElementById("sc-own");
+  var mode = "index", year = 2015;
+
+  M.forEach(function (m) {
+    var base = 0; for (var i = 0; i < 5; i++) base += D[i][m.k]; m.base = base / 5;
+    // least-squares trend through the yearly means
+    var n = D.length, sx = 0, sy = 0, sxx = 0, sxy = 0;
+    D.forEach(function (r) { sx += r[0]; sy += r[m.k]; sxx += r[0] * r[0]; sxy += r[0] * r[m.k]; });
+    m.b = (n * sxy - sx * sy) / (n * sxx - sx * sx); m.a = (sy - m.b * sx) / n;
+    var el = document.createElement("div"); el.className = "sm";
+    el.innerHTML = '<div class="sm-h"><h3>' + m.h + '</h3><span class="sm-v"></span></div>' +
+      '<p class="sm-g">' + m.g + ' <span class="sm-d"></span></p>';
+    var svg = document.createElementNS(NS, "svg");
+    svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+    svg.setAttribute("tabindex", "0");
+    svg.setAttribute("role", "img");
+    svg.setAttribute("aria-label", m.h + " by year, 1965 to 2015, " + m.g + ". Arrow keys change the year.");
+    el.appendChild(svg); grid.appendChild(el);
+    m.el = el; m.svg = svg;
+    svg.addEventListener("pointermove", pick); svg.addEventListener("pointerdown", pick);
+    svg.addEventListener("keydown", key);
+  });
+
+  function x(yr) { return L + (yr - 1965) / 50 * (W - L - R); }
+  function mk(tag, attrs, parent) {
+    var e = document.createElementNS(NS, tag);
+    for (var a in attrs) e.setAttribute(a, attrs[a]);
+    parent.appendChild(e); return e;
+  }
+  function draw() {
+    M.forEach(function (m) {
+      var svg = m.svg; while (svg.firstChild) svg.removeChild(svg.firstChild);
+      var tf = mode === "index" ? function (v) { return v / m.base * 100; } : function (v) { return v; };
+      var lo, hi;
+      if (mode === "index") { lo = 70; hi = 260; }
+      else {
+        lo = Infinity; hi = -Infinity;
+        D.forEach(function (r) { lo = Math.min(lo, r[m.k]); hi = Math.max(hi, r[m.k]); });
+        var pad = (hi - lo) * 0.08; lo -= pad; hi += pad;
+      }
+      var py = function (s) { return T + (1 - (s - lo) / (hi - lo)) * (H - T - B); };
+      var y = function (v) { return py(tf(v)); };
+      mk("line", { x1: L, x2: W - R, y1: H - B, y2: H - B, "class": "ax" }, svg);
+      [1965, 1990, 2015].forEach(function (yr) {
+        var t = mk("text", { x: x(yr), y: H - 6, "text-anchor": yr === 1965 ? "start" : yr === 2015 ? "end" : "middle" }, svg);
+        t.textContent = yr;
+      });
+      var ticks = mode === "index" ? [100, 200] : [lo + (hi - lo) * 0.1, hi - (hi - lo) * 0.1];
+      ticks.forEach(function (tv) {
+        var ty = py(tv);
+        mk("line", { x1: L, x2: W - R, y1: ty, y2: ty, "class": mode === "index" && tv === 100 ? "base" : "ax" }, svg);
+        var t = mk("text", { x: L - 5, y: ty + 3.5, "text-anchor": "end" }, svg);
+        t.textContent = mode === "index" ? tv : (m.k === 1 || m.k === 2 ? Math.round(tv) : tv.toFixed(2));
+      });
+      mk("line", { x1: x(1965), x2: x(2015), y1: y(m.a + m.b * 1965), y2: y(m.a + m.b * 2015), "class": "tr" }, svg);
+      mk("path", { d: D.map(function (r, i) { return (i ? "L" : "M") + x(r[0]).toFixed(1) + " " + y(r[m.k]).toFixed(1); }).join(""), "class": "ln" }, svg);
+      m.y = y;
+      m.cur = mk("line", { y1: T, y2: H - B, "class": "cur" }, svg);
+      m.dot = mk("circle", { r: 3.4, "class": "dot" }, svg);
+    });
+    set(year);
+  }
+  function set(yr) {
+    year = Math.max(1965, Math.min(2015, yr));
+    var r = D[year - 1965];
+    yrEl.textContent = year;
+    nEl.textContent = r[5] + " songs in that year's chart";
+    range.value = year;
+    M.forEach(function (m) {
+      var px = x(year);
+      m.cur.setAttribute("x1", px); m.cur.setAttribute("x2", px);
+      m.dot.setAttribute("cx", px); m.dot.setAttribute("cy", m.y(r[m.k]));
+      m.el.querySelector(".sm-v").textContent = m.f(r[m.k]);
+      var d = (r[m.k] / m.base - 1) * 100;
+      m.el.querySelector(".sm-d").textContent = "(" + (d >= 0 ? "+" : "−") + Math.abs(d).toFixed(Math.abs(d) < 10 ? 1 : 0) + "% on 1965–69)";
+    });
+  }
+  function pick(e) {
+    var b = e.currentTarget.getBoundingClientRect();
+    var vx = (e.clientX - b.left) / b.width * W;
+    set(Math.round(1965 + (vx - L) / (W - L - R) * 50));
+  }
+  function key(e) {
+    var s = { ArrowLeft: -1, ArrowDown: -1, ArrowRight: 1, ArrowUp: 1, PageDown: -10, PageUp: 10 }[e.key];
+    if (e.key === "Home") s = 1965 - year; if (e.key === "End") s = 2015 - year;
+    if (s) { e.preventDefault(); set(year + s); }
+  }
+  range.addEventListener("input", function () { set(+range.value); });
+  function setMode(mo) {
+    mode = mo;
+    bIdx.setAttribute("aria-pressed", mo === "index"); bOwn.setAttribute("aria-pressed", mo === "own");
+    draw();
+  }
+  bIdx.addEventListener("click", function () { setMode("index"); });
+  bOwn.addEventListener("click", function () { setMode("own"); });
+  draw();
+})();
+</script>
 </body>
 </html>
